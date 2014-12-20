@@ -72,7 +72,7 @@ module ssd (input [15:0] b, output reg [6:0] hex);
       13:ssd=7'b0100001;
       14:ssd=7'b0000110;
       15:ssd=7'b0001110;
-		default:hex=7'b1111111; 
+      default:hex=7'b1111111; 
     endcase
   end
 endmodule
