@@ -37,25 +37,23 @@ module lab3_5 (SW, HEX7, HEX6, HEX5, HEX4, HEX3, HEX2, HEX1, HEX0, KEY);
 
 endmodule
 
-module D_Latch (Clk, D, Q, Clr);
-  input D, Clk, Clr;
-  output reg Q;
-  always @ (D, Clk, Clr)
-    if (Clk)
-      Q = D;
-	else
-    if (Clr)
-      Q = 0;
+module D_Latch (input Clk, D, reset, output reg Q);
+  always @ (D, Clk, reset)
+      if (reset)
+			Q = 0;
+		else if(Clk)
+			Q = D;
+		
 endmodule
 
-module ff (input Clk, D, clr, output Q);
+module ff (input Clk, D, reset, output Q);
   wire Qm;
   
-  D_Latch DL0 (~Clk, D, Qm);
-  D_Latch DL1 (Clk, Qm, Q);
+  D_Latch DL0 (~Clk, D, reset, Qm);
+  D_Latch DL1 (Clk, Qm, reset, Q);
 endmodule
 
-module ssd (input [15:0] b, output reg [7:0] hex);
+module ssd (input [15:0] b, output reg [6:0] hex);
   always begin
     case(b)
       0:hex=7'b0000001;
