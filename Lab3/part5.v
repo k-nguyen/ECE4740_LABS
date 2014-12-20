@@ -40,10 +40,9 @@ endmodule
 module D_Latch (input Clk, D, reset, output reg Q);
   always @ (D, Clk, reset)
       if (reset)
-			Q = 0;
-		else if(Clk)
-			Q = D;
-		
+	Q = 0;
+      else if(Clk)
+	Q = D;
 endmodule
 
 module ff (input Clk, D, reset, output Q);
