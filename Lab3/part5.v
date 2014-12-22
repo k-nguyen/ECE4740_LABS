@@ -40,9 +40,10 @@ endmodule
 module D_Latch (input Clk, D, reset, output reg Q);
   always @ (D, Clk, reset)
       if (reset)
-	Q = 0;
-      else if(Clk)
-	Q = D;
+			Q = 0;
+		else if(Clk)
+			Q = D;
+		
 endmodule
 
 module ff (input Clk, D, reset, output Q);
@@ -52,26 +53,26 @@ module ff (input Clk, D, reset, output Q);
   D_Latch DL1 (Clk, Qm, reset, Q);
 endmodule
 
-module ssd (input [15:0] b, output reg [6:0] hex);
+module ssd (input [3:0] b, output reg [6:0] hex);
   always begin
     case(b)
-      0:SSD=7'b1000000;
-      1:SSD=7'b1111001;
-      2:SSD=7'b0100100;
-      3:SSD=7'b0110000;
-      4:SSD=7'b0011001;
-      5:SSD=7'b0010010;
-      6:SSD=7'b0000010;
-      7:SSD=7'b1111000;
-      8:SSD=7'b0000000;
-      9:SSD=7'b0011000;
-      10:ssd=7'b0001000;
-      11:ssd=7'b0000011;
-      12:ssd=7'b1000110;
-      13:ssd=7'b0100001;
-      14:ssd=7'b0000110;
-      15:ssd=7'b0001110;
-      default:hex=7'b1111111; 
+      0:hex=7'b1000000;
+      1:hex=7'b1111001;
+      2:hex=7'b0100100;
+      3:hex=7'b0110000;
+      4:hex=7'b0011001;
+      5:hex=7'b0010010;
+      6:hex=7'b0000010;
+      7:hex=7'b1111000;
+      8:hex=7'b0000000;
+      9:hex=7'b0011000;
+		10:hex=7'b0001000;
+      11:hex=7'b0000011;
+      12:hex=7'b1000110;
+      13:hex=7'b0100001;
+      14:hex=7'b0000110;
+      15:hex=7'b0001110;
+		default:hex=7'b1111111; 
     endcase
   end
 endmodule

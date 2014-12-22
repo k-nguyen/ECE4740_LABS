@@ -79,7 +79,7 @@ module ssd_2digits (x, ssd1, ssd0);
   digital_ssd B0 (ones, ssd0);
 endmodule
 
-module digital_ssd (input [6:0] b, output reg [6:0] ssd);
+module digital_ssd (input [3:0] b, output reg [6:0] ssd);
   always begin
     case(b)
       0:ssd=7'b1000000;
