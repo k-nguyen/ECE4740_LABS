@@ -6,7 +6,7 @@ The processor's components are as follows:
 4. 2-port Register file (8 registers)
 5. Branch controller (for different branch conditions)
 
-A block diagram of the processor is provided in this project folder. (Source: Computer Organization and Architecture by Alan Clements, 2013)
+A block diagram that this flow-through processor is based off of is provided in this project folder. (Source: Computer Organization and Architecture by Alan Clements, 2013)
 
 The instruction word is 32-bits with a format as follows:
 LSBJRX#_param_s1_s2_dest_literal
